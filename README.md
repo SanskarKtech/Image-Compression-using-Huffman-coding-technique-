@@ -108,15 +108,18 @@ Calculate Compression Metrics
 ## 📷 Results
 
 ### Original Image
-<img width="975" height="610" alt="image" src="https://github.com/user-attachments/assets/23db698d-5301-4e81-af5c-9c8d2ec445f2" />
+<img width="500" height="338" alt="sunrise" src="https://github.com/user-attachments/assets/59fa4faf-1285-4f2c-93f2-37a22aeb5ee9" />
+
 
 
 ### Reconstructed Image
-<img width="975" height="411" alt="image" src="https://github.com/user-attachments/assets/8a8dd107-4b52-4a46-b806-82e6bd1673c9" />
+<img width="1297" height="811" alt="image" src="https://github.com/user-attachments/assets/6997a235-6074-40d4-acf4-3036cb0189ac" />
+
 
 
 ### Huffman Tree
-![Uploading image.png…]()
+<img width="742" height="306" alt="image" src="https://github.com/user-attachments/assets/c55d053e-09a1-4432-a8be-ef3e524d6fff" />
+
 
 
 ### Performance Analysis
