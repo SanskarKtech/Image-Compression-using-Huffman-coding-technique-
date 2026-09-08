@@ -109,7 +109,8 @@ Calculate Compression Metrics
 
 ### Original Image
 
-<img width="1297" height="811" alt="image" src="https://github.com/user-attachments/assets/873088be-2789-4636-b599-b8a7b12dfaee" />
+![Uploading image.png…]()
+
 
 
 ### Reconstructed Image
