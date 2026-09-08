@@ -1,0 +1,59 @@
+% ============================================================
+% HUFFMAN IMAGE COMPRESSION - OPTIMIZED MODULAR VERSION
+% Digital Communication Project
+% ============================================================
+clear; clc; close all;
+
+projectName = 'HUFFMAN IMAGE COMPRESSION';
+
+welcomeMsg = sprintf([ ...
+    'DIGITAL COMMUNICATION PROJECT\n\n' ...
+    'Image Compression Using Huffman Coding\n\n' ...
+    'This version exposes the complete Huffman calculation:\n' ...
+    '1. Histogram and probabilities\n' ...
+    '2. Huffman node creation\n' ...
+    '3. Step-by-step node merging\n' ...
+    '4. Code generation using 0/1 branches\n' ...
+    '5. Encoding and decoding\n' ...
+    '6. Entropy, average code length and efficiency\n' ...
+    '7. Compression performance\n\n' ...
+    'The Huffman algorithm is implemented in the backend rather\n' ...
+    'than hiding the main calculation inside huffmandict().\n\n' ...
+    'Click OK to select an image.']);
+
+uiwait(msgbox(welcomeMsg, projectName, 'help'));
+
+[file, path] = uigetfile( ...
+    {'*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff', ...
+     'Image Files (*.png, *.jpg, *.jpeg, *.bmp, *.tif, *.tiff)'}, ...
+    'Select an Image for Compression');
+
+if isequal(file, 0)
+    msgbox('User canceled the operation.', 'Operation Cancelled', 'warn');
+    return;
+end
+
+imagePath = fullfile(path, file);
+img = imread(imagePath);
+
+% ---------------- BACKEND ----------------
+grayImage = preprocessImage(img);
+imageInfo = analyzeImage(img, grayImage, file);
+
+tic;
+analysis = runHuffmanBackend(grayImage);
+analysis.totalProcessingTime = toc;
+
+decodedSymbols = decodeHuffmanData(analysis.encodedData, analysis.tree);
+reconstructedImage = uint8(reshape(decodedSymbols, [analysis.rows, analysis.cols]));
+
+metrics = calculateMetrics(grayImage, analysis, imagePath);
+isLossless = verifyLossless(grayImage, reconstructedImage);
+
+% ---------------- COMMAND WINDOW ----------------
+displayCommandResults(file, imageInfo, analysis, metrics, ...
+    isLossless, analysis.encodingTime, analysis.decodingTime);
+
+% ---------------- FRONTEND ----------------
+createMainGUI(img, grayImage, reconstructedImage, imageInfo, ...
+    analysis, metrics, isLossless, imagePath);
