@@ -5,17 +5,17 @@ The system analyzes the pixel intensity distribution of an image, calculates sym
 The project also provides a comparison between the original and reconstructed image and calculates important compression parameters.
 ________________________________________
 🎯 Objectives
-	Implement Huffman coding for image compression.
-	Analyze the frequency and probability of image pixels.
-	Construct and visualize the Huffman tree.
-	Generate Huffman codes for image symbols.
-	Encode image data using Huffman coding.
-	Decode the compressed data.
-	Reconstruct the original image.
-	Calculate entropy and average Huffman code length.
-	Calculate coding efficiency.
-	Calculate compression ratio and related performance metrics.
-	Compare the original and reconstructed images.
+1Implement Huffman coding for image compression.
+Analyze the frequency and probability of image pixels.
+Construct and visualize the Huffman tree.
+Generate Huffman codes for image symbols.
+Encode image data using Huffman coding.
+Decode the compressed data.
+Reconstruct the original image.
+Calculate entropy and average Huffman code length.
+Calculate coding efficiency.
+Calculate compression ratio and related performance metrics.
+Compare the original and reconstructed images.
 ________________________________________
 🧠 Principle
 Huffman coding is a lossless data compression technique.
